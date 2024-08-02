@@ -13,4 +13,19 @@ export class CitiesController {
         console.log(response.status)
         return data;
     }
+    async postCities(endPoint: string, dataCity: ICity){
+        const response = await fetch(`${this.url}${endPoint}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataCity)
+        })
+        const data = await response.json();
+        if(response.status !== 201){
+            throw new Error('No se pudo agregar la ciudad')
+        }
+        console.log(response.status)
+        return data;
+    }
 }
