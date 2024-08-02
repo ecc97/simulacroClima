@@ -1,13 +1,14 @@
-import { ILogin } from "../Model/ILogin";
+import { ILogin, ResponseLogin } from "../Model/ILogin";
 
 export class PageController {
     url: string;
+    tokenLog: string | undefined;
 
     constructor(url:string){
         this.url = url;
     }
 
-    async login(data: ILogin, endPoint:string){
+    async login(data: ILogin, endPoint:string): Promise<ResponseLogin>{
         const response = await fetch(`${this.url}${endPoint}`, {
             method: 'POST',
             headers: {
@@ -21,8 +22,9 @@ export class PageController {
         } else {
             alert('')
         }
-        const token = response.json()
         
-        return token
+        const responseLogin = await response.json();
+        this.tokenLog = responseLogin.token;
+        return responseLogin;
     }
 }
