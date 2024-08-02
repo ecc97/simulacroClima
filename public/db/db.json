@@ -1,0 +1,19 @@
+{
+  "cities": [
+    {
+      "city": "Medellín",
+      "country": "Colombia",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSajIEArYzWnWBHJrCywe10S_pfzvMaxFL0Hw&s",
+      "cityDescription": "ciudad",
+      "date": "2017-01-01T00:00:00"
+    },
+    {
+      "id": "d896",
+      "city": "Bello",
+      "country": "Colombia",
+      "image": "https://media.viajando.travel/p/a9603d6406ca3d5c27d3b061f2f31d49/adjuntos/236/imagenes/000/555/0000555746/1200x675/smart/bellojpg.jpg",
+      "cityDescription": "Bello bello",
+      "date": "2024-08-02T15:17:00.992Z"
+    }
+  ]
+}
