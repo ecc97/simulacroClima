@@ -1,6 +1,7 @@
 import { CitiesController } from "./Cities.controller"
 import { Card } from "./Card"
 import { Spinner } from "./Spinner"
+import { IWeather } from "../Model/IWeather"
 
 const logoutButton = document.querySelector('#logout-btn')
 const carSection = document.querySelector('#cards-section')
@@ -32,8 +33,10 @@ async function showCities(){
     const cities = await citiesController.getCities("cities")
 
     console.log(cities)
-    cities.forEach(city => {
-        carSection?.append(Card(city))
+    cities.forEach(async (city) => {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.city}&APPID=0f5b88c7945f5e5a9de373b54ccecc6a`)
+        const data: IWeather = await response.json()
+        carSection?.append(Card(city, data.main.temp))
     })
     
 }
