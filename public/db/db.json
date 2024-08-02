@@ -1,0 +1,10 @@
+{
+    "cities":[
+        {
+            "city": "Medellín",
+            "country": "Colombia",
+            "cityDescription": "ciudad",
+            "date": "2017-01-01T00:00:00"
+        }
+    ]
+}
