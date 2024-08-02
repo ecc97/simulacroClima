@@ -3,7 +3,7 @@
 
 .card-container{
     width: 280px;
-    height: 320px;
+    height: 380px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -32,8 +32,27 @@
         cursor: pointer;
     }
 
+    .card-button-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .card-view-more {
+            width: 100px;
+            height: 32px;
+            border: none;
+            border-radius: 13px;
+            background: $lightBlue;
+            color: $white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+
 }
 
-.card-container:hover .card-cross{
-    display: flex;
-}
+.card-container:hover {
+    .card-cross{
+        display: flex;
+    }
+} 
