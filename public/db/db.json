@@ -3,6 +3,7 @@
         {
             "city": "Medellín",
             "country": "Colombia",
+            "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSajIEArYzWnWBHJrCywe10S_pfzvMaxFL0Hw&s",
             "cityDescription": "ciudad",
             "date": "2017-01-01T00:00:00"
         }
