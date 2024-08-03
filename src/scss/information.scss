@@ -1,0 +1,58 @@
+@import './style.scss';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.card-container{
+    width: 280px;
+    height: 380px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+
+    .card-image{
+        width: 100%;
+        height: 205px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+
+    .card-info{
+        padding: 15px 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .card-cross{
+        font-size: 30px;
+        position: absolute;
+        top:10px;
+        display: none;
+        right: 10px;
+        color: $gray;
+        cursor: pointer;
+    }
+
+    .card-button-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .card-view-more {
+            width: 100px;
+            height: 32px;
+            border: none;
+            border-radius: 13px;
+            background: $lightBlue;
+            color: $white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.card-container:hover {
+    .card-cross{
+        display: flex;
+    }
+} 
