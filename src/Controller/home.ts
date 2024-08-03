@@ -42,3 +42,12 @@ async function showCities(){
 }
 
 showCities()
+
+document.addEventListener('click', (e: Event) => {
+    const target = e.target as HTMLElement;
+    if(target.className.includes('card-view-more')){
+        const idViewMore = target.getAttribute('id-button')
+        localStorage.setItem('id-view', String(idViewMore))
+        window.location.href = `../View/information.html?id=${idViewMore}`
+    }
+})
