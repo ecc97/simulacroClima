@@ -28,4 +28,11 @@ export class CitiesController {
         console.log(response.status)
         return data;
     }
+
+    async getInfo(endPoint: string, idCity: string | null): Promise<ICity>{
+        const response = await fetch(`${this.url}${endPoint}${idCity}`)
+        const data = await response.json()
+        console.log(data)
+        return data
+    }
 }

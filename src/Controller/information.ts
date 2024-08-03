@@ -1,15 +1,11 @@
 import { ICity } from "../Model/ICitys"
+import { CitiesController } from "./Cities.controller"
 import '../scss/information.scss'
 
 const main = document.querySelector('#home-main') as HTMLElement
 const idCity = localStorage.getItem('id-view')
 
-async function getInfo(): Promise<ICity>{
-    const response = await fetch(`http://localhost:3000/cities/${idCity}`)
-    const data: ICity = await response.json()
-    console.log(data)
-    return data
-}
+const url = 'http://localhost:3000/'
 
 function showInfo(props: ICity){
     const {city, country, image, cityDescription} = props;
@@ -39,7 +35,8 @@ function showInfo(props: ICity){
 
 async function renderAll() {
     try {
-        const informationCity: ICity = await getInfo()
+        const citiesController = new CitiesController(url)
+        const informationCity: ICity = await citiesController.getInfo("cities/", idCity)
         showInfo(informationCity)
     } catch (error) {
         console.error(error)
