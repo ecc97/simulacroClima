@@ -13,7 +13,7 @@ export class CitiesController {
         console.log(response.status)
         return data;
     }
-    async postCities(endPoint: string, dataCity: ICity){
+    async postCities(endPoint: string, dataCity: ICity): Promise<ICity>{
         const response = await fetch(`${this.url}${endPoint}`, {
             method: 'POST',
             headers: {
@@ -21,7 +21,7 @@ export class CitiesController {
             },
             body: JSON.stringify(dataCity)
         })
-        const data = await response.json();
+        const data: ICity = await response.json();
         if(response.status !== 201){
             throw new Error('No se pudo agregar la ciudad')
         }
@@ -35,7 +35,7 @@ export class CitiesController {
         console.log(data)
         return data
     }
-    async putCities(endPoint: string, idCity: string | null, dataCity: ICity){
+    async putCities(endPoint: string, idCity: string | null, dataCity: ICity): Promise<ICity>{
         const response = await fetch(`${this.url}${endPoint}${idCity}`, {
             method: 'PUT',
             headers: {
@@ -43,11 +43,28 @@ export class CitiesController {
             },
             body: JSON.stringify(dataCity)
         })
-        const data = await response.json()
+        const data: ICity = await response.json()
         if(response.status!== 200){
             throw new Error('No se pudo actualizar la ciudad')
         }
         console.log(response.status)
         return data
     }
+    async deleteCities(endPoint: string, idCity: string): Promise<void> {
+        if (!idCity) {
+            throw new Error('ID de la ciudad no proporcionado');
+        }
+    
+        const response = await fetch(`${this.url}${endPoint}${idCity}`, {
+            method: 'DELETE'
+        });
+    
+        if (response.status !== 200) {
+            throw new Error('No se pudo eliminar la ciudad');
+        }
+        console.log(response.status);
+    
+        return;
+    }
+    
 }
