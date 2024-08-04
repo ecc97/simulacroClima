@@ -61,12 +61,21 @@ document.addEventListener('click', async (e: Event) => {
     }
 })
 
-// document.addEventListener('click', async (e: Event) => {
-//     const target = e.target as HTMLElement;
-//     if(target.className.includes('card-delete')){
-//         const idDelete = target.getAttribute('id-button')
-//         const citiesController = new CitiesController(url)
-//         await citiesController.deleteCities(`cities/${idDelete}`)
-//         showCities()
-//     }
-// })
+document.addEventListener('click', async (e: Event) => {
+    const target = e.target as HTMLElement;
+    const idDelete = target.getAttribute('city-id')
+    if(target.className.includes('delete')){ 
+        if(confirm('Estás seguro que quieres eliminar esta ciudad?')){
+            try {
+                const citiesController = new CitiesController(url);
+                await citiesController.deleteCities('cities/', String(idDelete));
+                showCities();
+                alert('Ciudad eliminada correctamente');
+                window.location.reload();
+            } catch (error) {
+                console.error(error);
+                alert('Error al eliminar la ciudad');
+            }
+        }
+    }
+})

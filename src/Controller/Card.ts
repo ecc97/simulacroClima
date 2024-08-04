@@ -13,9 +13,10 @@ export const Card = (props: ICity, temperature: number) => {
     infoContainer.className = 'card-info'
 
     const title = document.createElement("h4") as HTMLHeadElement
-    title.className = 'card-title'
+    title.className = 'card-title text-capitalize'
 
     const cardCountry = document.createElement("p") as HTMLParagraphElement
+    cardCountry.className = 'text-capitalize'
     // const description = document.createElement("p") as HTMLParagraphElement
     
     const temp = document.createElement("p") as HTMLElement;
@@ -28,9 +29,9 @@ export const Card = (props: ICity, temperature: number) => {
 
     const crossContainer = document.createElement("span") as HTMLSpanElement
     crossContainer.className = 'card-cross'
-    crossContainer.innerHTML = `<i product-id = ${id} class="bi bi-x-circle-fill"></i>`;
+    crossContainer.innerHTML = `<i city-id="${id}" class="bi bi-x-circle-fill delete"></i>`;
     
-    infoContainer.append(title, country, '', temp);
+    infoContainer.append(title, cardCountry, '', temp);
     
     const buttonContainer = document.createElement("div") as HTMLDivElement
     buttonContainer.className = 'card-button-container'

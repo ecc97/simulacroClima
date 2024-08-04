@@ -3,18 +3,18 @@
     {
       "city": "Medellín",
       "country": "Colombia",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSajIEArYzWnWBHJrCywe10S_pfzvMaxFL0Hw&s",
-      "cityDescription": "ciudad de la eterna primavera",
-      "date": "2024-08-03T22:18:14.280Z",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Estaci%C3%B3n_Estadio_%28Metro_de_Medell%C3%ADn%29.jpg",
+      "cityDescription": "ciudad de la eterna primavera de colombia",
+      "date": "2024-08-04T00:57:59.121Z",
       "id": "5b9d"
     },
     {
-      "city": "Bello",
-      "country": "Colombia",
-      "image": "https://media.viajando.travel/p/a9603d6406ca3d5c27d3b061f2f31d49/adjuntos/236/imagenes/000/555/0000555746/1200x675/smart/bellojpg.jpg",
-      "cityDescription": "Bello bello Antioquia",
-      "date": "2024-08-03T22:49:26.383Z",
-      "id": "d896"
+      "city": "bogotá",
+      "country": "colombia",
+      "image": "https://desarrolloeconomico.gov.co/wp-content/uploads/2023/05/167_Colpatria8_RicardoBaez_small.jpg",
+      "cityDescription": "capital",
+      "date": "2024-08-04T03:04:46.652Z",
+      "id": "5d0d"
     }
   ]
 }
