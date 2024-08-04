@@ -1,5 +1,6 @@
 import { ICity } from "../Model/ICitys";
 import { CitiesController } from "./Cities.controller";
+import Swal from "sweetalert2";
 
 const form = document.querySelector('form') as HTMLFormElement;
 const city = document.querySelector('#new-city') as HTMLInputElement;
@@ -27,12 +28,26 @@ form.addEventListener('submit', async (e: Event) => {
     try {
         const cityAdded = await citiesController.postCities("cities", newCity)
         console.log(cityAdded)
-        window.location.href = '../View/home.html'
+        // alert('Se agregó ciudad')
+        Swal.fire({
+            title: 'Ciudad agregada',
+            text: 'Se agregó la ciudad exitosamente',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            window.location.href = '../View/home.html';
+        });
         form.reset()
-        alert('Se agregó ciudad')
+        // window.location.href = '../View/home.html'
     } catch (error) {
         console.error(error)
-        alert('No se pudo agregar la ciudad')
+        // alert('No se pudo agregar la ciudad')
+        Swal.fire({
+            title: 'Error',
+            text: 'No se pudo agregar la ciudad',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
         return;
     }
     

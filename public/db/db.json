@@ -33,6 +33,15 @@
       "cityDescription": "la costa",
       "date": "2024-08-04T16:33:48.384Z",
       "tokenUser": "QpwL5tke4Pnpja7X4"
+    },
+    {
+      "id": "635d",
+      "city": "manizales",
+      "country": "colombia",
+      "image": "https://www.hotelbenidorm.co/assets/cache/uploads//blog/manizales/751x422/catedral-basilica-metropolitana-nuestra-senora-rosario-manizales-hotel-benidorm.webp",
+      "cityDescription": "manizales",
+      "date": "2024-08-04T18:47:48.994Z",
+      "tokenUser": "QpwL5tke4Pnpja7X4"
     }
   ]
 }
