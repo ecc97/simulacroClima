@@ -5,5 +5,5 @@ export interface ICity {
     image: string,
     cityDescription: string,
     date: Date,
-    tokenUser: string
+    tokenUser?: string
 }

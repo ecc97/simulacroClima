@@ -35,6 +35,7 @@ async function showCities(){
     const citiesController = new CitiesController(url)
     const cities = await citiesController.getCities("cities")
     const citiesByUser = cities.filter(city => city.tokenUser === tokenUser)
+    localStorage.removeItem('id-edit')
 
     console.log(cities)
     citiesByUser.forEach(async (city) => {
@@ -61,7 +62,7 @@ document.addEventListener('click', async (e: Event) => {
     if(target.className.includes('card-btn-edit')){
         const idEdit = target.getAttribute('id-btn-edit')
         localStorage.setItem('id-edit', String(idEdit))
-        window.location.href = `../View/editCity.html?id=${idEdit}`
+        window.location.href = `../View/addCity.html?id=${idEdit}`
     }
 })
 

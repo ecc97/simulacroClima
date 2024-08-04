@@ -51,10 +51,6 @@ export class CitiesController {
         return data
     }
     async deleteCities(endPoint: string, idCity: string): Promise<void> {
-        if (!idCity) {
-            throw new Error('ID de la ciudad no proporcionado');
-        }
-    
         const response = await fetch(`${this.url}${endPoint}${idCity}`, {
             method: 'DELETE'
         });
@@ -66,5 +62,4 @@ export class CitiesController {
     
         return;
     }
-    
 }

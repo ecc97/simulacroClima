@@ -17,22 +17,22 @@
       "id": "5d0d"
     },
     {
-      "id": "cd9d",
-      "city": "medellín",
+      "city": "medellin",
       "country": "colombia",
-      "image": "https://www.travelers.com.co/assets/cache/uploads/medellin/1300x868/medellin-travelers-apartamentos-suites-colombia.jpeg",
+      "image": "https://visasencolombia.com/wp-content/uploads/2022/02/ciudad-de-medellin.jpg",
       "cityDescription": "ciudad de la eterna primavera",
-      "date": "2024-08-04T16:33:20.172Z",
-      "tokenUser": "QpwL5tke4Pnpja7X4"
+      "date": "2024-08-04T21:05:22.234Z",
+      "tokenUser": "QpwL5tke4Pnpja7X4",
+      "id": "cd9d"
     },
     {
-      "id": "a1ae",
       "city": "cartagena",
       "country": "colombia",
       "image": "https://blog.properati.com.co/wp-content/uploads/2021/02/GettyImages-1148861090.jpg",
-      "cityDescription": "la costa",
-      "date": "2024-08-04T16:33:48.384Z",
-      "tokenUser": "QpwL5tke4Pnpja7X4"
+      "cityDescription": "la costa colombia",
+      "date": "2024-08-04T20:52:06.331Z",
+      "tokenUser": "QpwL5tke4Pnpja7X4",
+      "id": "a1ae"
     },
     {
       "id": "635d",
@@ -42,6 +42,15 @@
       "cityDescription": "manizales",
       "date": "2024-08-04T18:47:48.994Z",
       "tokenUser": "QpwL5tke4Pnpja7X4"
+    },
+    {
+      "city": "bello",
+      "country": "colombia",
+      "image": "https://optima.com.co/wp-content/uploads/2023/03/comprar-vivienda-en-bello.jpeg",
+      "cityDescription": "ciudad cercana a medellín",
+      "date": "2024-08-04T21:07:12.376Z",
+      "tokenUser": "QpwL5tke4Pnpja7X4",
+      "id": "8037"
     }
   ]
 }

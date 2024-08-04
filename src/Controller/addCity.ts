@@ -13,10 +13,25 @@ const url = 'http://localhost:3000/'
 let tokenUser = sessionStorage.getItem('token') as string
 const citiesController = new CitiesController(url);
 
+document.addEventListener('DOMContentLoaded', async () => {
+    const idCity = localStorage.getItem('id-edit');
+    
+    if (idCity) {
+        try {
+            const infoCity: ICity = await citiesController.getInfo("cities/", idCity);
+            city.value = infoCity.city;
+            country.value = infoCity.country;
+            image.value = infoCity.image;
+            cityDescription.value = infoCity.cityDescription;
+        } catch (error) {
+            console.error('Error fetching city information:', error);
+        }
+    }
+
 form.addEventListener('submit', async (e: Event) => {
     e.preventDefault()
     
-    const newCity = {
+    const cityData = {
         city: city.value,
         country: country.value,
         image: image.value,
@@ -26,19 +41,26 @@ form.addEventListener('submit', async (e: Event) => {
     }
 
     try {
-        const cityAdded = await citiesController.postCities("cities", newCity)
-        console.log(cityAdded)
-        // alert('Se agregó ciudad')
-        Swal.fire({
-            title: 'Ciudad agregada',
-            text: 'Se agregó la ciudad exitosamente',
-            icon: 'success',
-            confirmButtonText: 'OK'
-        }).then(() => {
-            window.location.href = '../View/home.html';
-        });
-        form.reset()
-        // window.location.href = '../View/home.html'
+        if(idCity){
+            const cityEdited = await citiesController.putCities('cities/', idCity, cityData)
+            console.log(cityEdited)
+            localStorage.removeItem('id-edit')
+            alert('Se editó la ciudad')
+        } else {
+            const cityAdded = await citiesController.postCities("cities", cityData)
+            console.log(cityAdded)
+            // alert('Se agregó ciudad')
+            Swal.fire({
+                title: 'Ciudad agregada',
+                text: 'Se agregó la ciudad exitosamente',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.href = '../View/home.html';
+            });
+            form.reset()
+            // window.location.href = '../View/home.html'
+        }
     } catch (error) {
         console.error(error)
         // alert('No se pudo agregar la ciudad')
@@ -51,9 +73,11 @@ form.addEventListener('submit', async (e: Event) => {
         return;
     }
     
+    
     // cityArray.push(newCity)
     // localStorage.setItem('cityArray', JSON.stringify(cityArray))
     // form.reset()
     // alert('Se agregó ciudad')
 
+})  
 })
