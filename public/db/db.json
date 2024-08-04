@@ -15,6 +15,24 @@
       "cityDescription": "capital",
       "date": "2024-08-04T03:04:46.652Z",
       "id": "5d0d"
+    },
+    {
+      "id": "cd9d",
+      "city": "medellín",
+      "country": "colombia",
+      "image": "https://www.travelers.com.co/assets/cache/uploads/medellin/1300x868/medellin-travelers-apartamentos-suites-colombia.jpeg",
+      "cityDescription": "ciudad de la eterna primavera",
+      "date": "2024-08-04T16:33:20.172Z",
+      "tokenUser": "QpwL5tke4Pnpja7X4"
+    },
+    {
+      "id": "a1ae",
+      "city": "cartagena",
+      "country": "colombia",
+      "image": "https://blog.properati.com.co/wp-content/uploads/2021/02/GettyImages-1148861090.jpg",
+      "cityDescription": "la costa",
+      "date": "2024-08-04T16:33:48.384Z",
+      "tokenUser": "QpwL5tke4Pnpja7X4"
     }
   ]
 }

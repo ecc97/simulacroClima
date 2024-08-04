@@ -8,6 +8,7 @@ const carSection = document.querySelector('#cards-section')
 const loaderContainer = document.querySelector('.loader-container') as HTMLDivElement
 
 const url = 'http://localhost:3000/'
+let tokenUser = sessionStorage.getItem('token') as string
 
 loaderContainer.append(Spinner())
 window.addEventListener('DOMContentLoaded', () => {
@@ -31,9 +32,10 @@ logoutButton?.addEventListener('click', ()=> {
 async function showCities(){
     const citiesController = new CitiesController(url)
     const cities = await citiesController.getCities("cities")
+    const citiesByUser = cities.filter(city => city.tokenUser === tokenUser)
 
     console.log(cities)
-    cities.forEach(async (city) => {
+    citiesByUser.forEach(async (city) => {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.city}&APPID=0f5b88c7945f5e5a9de373b54ccecc6a`)
         const data: IWeather = await response.json()
         carSection?.append(Card(city, data.main.temp))

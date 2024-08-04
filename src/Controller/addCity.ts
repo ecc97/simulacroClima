@@ -9,6 +9,7 @@ const cityDescription = document.querySelector('#newCity-description') as HTMLTe
 
 // const cityArray:ICity[] = JSON.parse(localStorage.getItem("cityArray") || "[]")
 const url = 'http://localhost:3000/'
+let tokenUser = sessionStorage.getItem('token') as string
 const citiesController = new CitiesController(url);
 
 form.addEventListener('submit', async (e: Event) => {
@@ -19,7 +20,8 @@ form.addEventListener('submit', async (e: Event) => {
         country: country.value,
         image: image.value,
         cityDescription: cityDescription.value,
-        date: new Date()
+        date: new Date(),
+        tokenUser: tokenUser
     }
 
     try {
