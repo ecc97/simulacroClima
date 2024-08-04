@@ -51,3 +51,22 @@ document.addEventListener('click', (e: Event) => {
         window.location.href = `../View/information.html?id=${idViewMore}`
     }
 })
+
+document.addEventListener('click', async (e: Event) => {
+    const target = e.target as HTMLElement;
+    if(target.className.includes('card-btn-edit')){
+        const idEdit = target.getAttribute('id-btn-edit')
+        localStorage.setItem('id-edit', String(idEdit))
+        window.location.href = `../View/editCity.html?id=${idEdit}`
+    }
+})
+
+// document.addEventListener('click', async (e: Event) => {
+//     const target = e.target as HTMLElement;
+//     if(target.className.includes('card-delete')){
+//         const idDelete = target.getAttribute('id-button')
+//         const citiesController = new CitiesController(url)
+//         await citiesController.deleteCities(`cities/${idDelete}`)
+//         showCities()
+//     }
+// })
