@@ -48,11 +48,26 @@
             cursor: pointer;
         }
     }
+    .card-btn-edit {
+        width: 50px;
+        font-size: 30px;
+        position: absolute;
+        top:10px;
+        display: none;
+        left: 10px;
+        color: $gray;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+    }
 
 }
 
 .card-container:hover {
     .card-cross{
         display: flex;
+    }
+    .card-btn-edit{
+        display: flex
     }
 } 

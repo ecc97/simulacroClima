@@ -31,16 +31,21 @@ export const Card = (props: ICity, temperature: number) => {
     crossContainer.innerHTML = `<i product-id = ${id} class="bi bi-x-circle-fill"></i>`;
     
     infoContainer.append(title, country, '', temp);
-
+    
     const buttonContainer = document.createElement("div") as HTMLDivElement
     buttonContainer.className = 'card-button-container'
     const viewMoreButton = document.createElement("button") as HTMLButtonElement
     viewMoreButton.innerText = 'Ver más'
     viewMoreButton.className = 'card-view-more'
     viewMoreButton.setAttribute('id-button', String(id))
+    
+    const btnEdit = document.createElement('button') as HTMLButtonElement
+    btnEdit.className = 'card-btn-edit'
+    btnEdit.setAttribute('id-btn-edit', String(id))
+    btnEdit.innerHTML = `<i class="bi bi-pencil-square"></i>`
 
     buttonContainer.append(viewMoreButton)
-    container.append(img, infoContainer, crossContainer, buttonContainer);
+    container.append(img, infoContainer, crossContainer, buttonContainer, btnEdit);
     
     return container
 }

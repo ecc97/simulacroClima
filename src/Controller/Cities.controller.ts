@@ -35,4 +35,19 @@ export class CitiesController {
         console.log(data)
         return data
     }
+    async putCities(endPoint: string, idCity: string | null, dataCity: ICity){
+        const response = await fetch(`${this.url}${endPoint}${idCity}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataCity)
+        })
+        const data = await response.json()
+        if(response.status!== 200){
+            throw new Error('No se pudo actualizar la ciudad')
+        }
+        console.log(response.status)
+        return data
+    }
 }
