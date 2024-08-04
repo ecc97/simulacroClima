@@ -8,7 +8,7 @@ const idCity = localStorage.getItem('id-view')
 const url = 'http://localhost:3000/'
 
 function showInfo(props: ICity){
-    const {city, country, image, cityDescription} = props;
+    const {city, country, image, cityDescription, date} = props;
     const container = document.createElement('div') as HTMLElement
     container.className = 'card-container'
 
@@ -26,7 +26,10 @@ function showInfo(props: ICity){
     const description = document.createElement("p") as HTMLParagraphElement
     description.innerText = cityDescription
 
-    container.append(img, title, cardCountry, description)
+    const dateElement = document.createElement("span") as HTMLSpanElement
+    dateElement.innerText = `Fecha: ${new Date(date).toLocaleDateString()}`
+
+    container.append(img, title, cardCountry, description, dateElement)
     main.append(container)
 
     return main

@@ -4,5 +4,6 @@ export interface ICity {
     country: string,
     image: string,
     cityDescription: string,
-    date: Date
+    date: Date,
+    tokenUser: string
 }
